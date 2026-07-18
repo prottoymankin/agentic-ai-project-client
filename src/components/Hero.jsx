@@ -52,7 +52,7 @@ export default function Hero() {
             <img
               src="/assets/robo.png"
               alt="AI Writing Assistant Illustration"
-              className="w-full max-w-md md:max-w-lg object-contain transition-transform duration-500 hover:scale-105"
+              className="w-full max-w-md md:max-w-lg object-contain transition-transform duration-500 hover:scale-105 animate-float"
             />
           </div>
         </div>

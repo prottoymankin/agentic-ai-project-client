@@ -6,7 +6,7 @@ import { Search, AlertCircle, BookOpen, RefreshCw, PenTool, Sparkles } from "luc
 import BlogCard from "@/components/BlogCard";
 import Link from "next/link";
 
-const CATEGORIES = ["All", "Technology", "Programming", "AI", "Business", "Lifestyle", "Education"];
+const CATEGORIES = ["All", "Technology", "Programming", "Artificial Intelligence", "Web Development", "Business", "Lifestyle", "Education"];
 
 // Shimmer skeleton loading effect
 function BlogSkeleton() {

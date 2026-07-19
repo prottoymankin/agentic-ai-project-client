@@ -22,7 +22,17 @@ export default function MyBlogsPage() {
     setLoading(true);
     setError("");
     try {
-      const response = await axios.get(`${baseUrl}/api/my-blogs?id=${session.user.id}`);
+      const { data: tokenData } = await authClient.token();
+
+      const response = await axios.get(
+        `${baseUrl}/api/my-blogs?id=${session.user.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${tokenData?.token}`,
+            "Content-Type": "application/json"
+          }
+        }
+      );
       if (response.data && Array.isArray(response.data.blogs)) {
         setBlogs(response.data.blogs);
       } else {

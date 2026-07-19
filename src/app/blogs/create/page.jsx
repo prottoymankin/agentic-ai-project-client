@@ -160,6 +160,8 @@ export default function CreateBlogPage() {
     setSuccess("");
 
     try {
+      const { data: tokenData } = await authClient.token();
+
       await axios.post(`${baseUrl}/api/blogs`, {
         title,
         category,
@@ -169,6 +171,11 @@ export default function CreateBlogPage() {
         authorEmail: session.user.email,
         authorId: session.user.id,
         createdAt: new Date().toISOString(),
+      }, {
+        headers: {
+          Authorization: `Bearer ${tokenData?.token}`,
+          "Content-Type": "application/json"
+        }
       });
 
       setSuccess("Blog post published successfully!");
